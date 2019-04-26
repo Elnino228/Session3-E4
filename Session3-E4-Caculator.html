@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css-E4-Caculator.css">
+</head>
+<body>
+<input type="text" id="exprText" value="" style="text-align: right">
+<br>
+<br>
+<button class="number" type="button" value="1" onclick="getButton(this.value)">1</button>
+<button class="number" type="button" value="2" onclick="getButton(this.value)">2</button>
+<button class="number" type="button" value="3" onclick="getButton(this.value)">3</button>
+<button class="operator" type="button" value="+" onclick="getButton(this.value);">+</button>
+<br>
+<button class="number" type="button" value="4" onclick="getButton(this.value)">4</button>
+<button class="number" type="button" value="5" onclick="getButton(this.value)">5</button>
+<button class="number" type="button" value="6" onclick="getButton(this.value)">6</button>
+<button class="operator" type="button" value="-" onclick="getButton(this.value);">-</button>
+<br>
+<button class="number" type="button" value="7" onclick="getButton(this.value)">7</button>
+<button class="number" type="button" value="8" onclick="getButton(this.value)">8</button>
+<button class="number" type="button" value="9" onclick="getButton(this.value)">9</button>
+<button class="operator" type="button" value="*" onclick="getButton(this.value);">x</button>
+<br>
+<button class="clear" type="button" value="C" onclick="clr()">C</button>
+<button class="number" type="button" value="0" onclick="getButton(this.value)">0</button>
+<button class="equal" type="button" value="=" onclick="equal()">=</button>
+<button class="operator" type="button" value="/" onclick="getButton(this.value)">/</button>
+<script>
+    function getButton(val) {
+        document.getElementById("exprText").value += val;
+    }
+    function equal() {
+        let result=document.getElementById("exprText").value;
+        result=eval(result);
+        document.getElementById('exprText').value=result;
+    }
+    function clr() {
+        document.getElementById('exprText').value='';
+    }
+</script>
+</body>
+</html>
